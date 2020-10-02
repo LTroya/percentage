@@ -27,12 +27,12 @@ class Percentage extends Number
         ]);
 
         $this->resolveUsing(function ($value) {
-            return $value * 100;
+            return $value;
         });
 
         $this->fillUsing(function (NovaRequest $request, $model, $attribute, $requestAttribute) {
             $value = $request[$requestAttribute];
-            $model->{$attribute} = $value === '' ? null : round($value, $this->precision) / 100;
+            $model->{$attribute} = $value === '' ? null : round($value, $this->precision);
         });
     }
 
