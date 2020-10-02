@@ -25,7 +25,7 @@
 
         methods: {
             setInitialValue() {
-                this.value = this.field.value == null ? null : this.field.value.toFixed(this.field.precision);
+                this.value = this.field.value == null ? null : parseFloat(this.field.value).toFixed(this.field.precision);
             },
 
             fill(formData) {
